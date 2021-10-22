@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header>
+        <h1 id="Titulo">
+            Sistema Integrado de gestion
+        </h1>
+        <img src="Imagenes/Usuario.png" alt="usuario" id="usuario" class="usuario">
+        <p class="usuario">usuario 1</p>
+    </header>
+    <!-- Main container -->
+    <nav class="level">
+      <!-- Left side -->
+      <div class="level-left" >
+        <p class="level-item-nav"><a>Inicio</a></p>
+        <p class="level-item-nav"><a>Usuarios</a></p>
+        <p class="level-item-nav"><a>Clientes</a></p>
+        <p class="level-item-nav"><a>Proveedores</a></p>
+        <p class="level-item-nav"><a>Productos</a></p>
+      </div>
+
+      <!-- Right side -->
+      <div class="level-right">
+        <div class="level-item">
+          <p class="subtitle is-5">Buscar en la web</p>
+        </div>
+        <div class="level-item">
+          <div class="field has-addons">
+            <p class="control" id="buscador">
+              <input class="input" type="text" id="buscar" />
+            </p>
+            <p class="control">
+              <button class="button">
+                <picture>
+                  <img
+                    src="Imagenes/search_black_24dp.svg"
+                    alt="simbolo-buscar"
+                  />
+                  <figcaption>Buscar</figcaption>
+                </picture>
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <form action="">
+        <fieldset>
+          <p id="Agregar">Agregar Producto</p>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal" >
+              <label class="label">Codigo</label>
+            </div>
+            <div class="field-body" >
+              <div class="field" id="label-codigo">
+                <div class="control" id="flex-codigo">
+                  <input class="input" type="tel" pattern="[0-9]{6}" placeholder="123456" id="codigo" >
+                </div>
+              </div>
+            </div>
+            <p class="control">
+                <a class="button">
+                  Validar
+                </a>
+            </p>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Nombre</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Solo letras y números" pattern="[a-zAZ]" maxlength="100" id="nombre">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Abreviatura</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Solo letras" pattern="[a-zAZ]" maxlength="10" id="abreviatura">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Categoria</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select>
+                        <option value="lacteos" selected>Lacteos</option>
+                        <option value="pasteles">Pasteles</option>
+                        <option value="panes-especiales">Panes especiales</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Ruc:</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="tel" placeholder="Solo numeros" id="ruc">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Precio:</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="number" min="1" step="0.01" id="precio">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label" >Color:</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="color" name="color-etiqueta" id="color-etiqueta">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Fecha:</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="date" id="fecha">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Estado</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <label class="radio">
+                    <input type="radio" name="Estado" checked>
+                    Activo
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="Estado">
+                    Suspendido
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="Estado">
+                    De baja
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Afecto a impuesto</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal has-text-left " id="label-foto">
+              <label class="label" id="foto">Foto</label>
+            </div>
+            <div class="file">
+                <label class="file-label">
+                  <input class="file-input" type="file" name="resume" accept="image/png,image/jpeg">
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                      Choose a file…
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <img src="Imagenes/image_black_24dp.svg" alt="foto" >
+          </div>
+          <div class="field is-horizontal" id="descripcion-flex">
+            <div class="field-label is-normal">
+              <label class="label">Descripcion</label>
+            </div>
+            <input type="text" id="descripcion" >
+          </div>
+          <div class="field is-grouped is-grouped-centered">
+            <p class="control">
+              <a class="button is-primary"> Submit </a>
+            </p>
+            <p class="control">
+              <a class="button is-light"> Cancel </a>
+            </p>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+    <footer>
+        <a href="" class="nosotros">¿Que hacemos?</a>
+        <a href="" class="nosotros">Enlaces principales</a>
+        <a href="" class="nosotros">Contáctanos</a> 
+    </footer>
+  </body>
+</html>
